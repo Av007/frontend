@@ -1,14 +1,16 @@
-import React from 'react'
-import './App.css'
-import ButtonUsage from './components/ButtonComponent'
+import "./App.css";
+import AuthProvider from "./provider/AuthProvider";
+import { Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
 
 function App() {
-
   return (
-    <>
-      <ButtonUsage/>
-    </>
-  )
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Index />} />
+      </Routes>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
